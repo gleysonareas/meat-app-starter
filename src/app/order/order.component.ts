@@ -25,6 +25,7 @@ export class OrderComponent implements OnInit {
     { label: 'Dinheiro', value: 'MON' },
     { label: 'Cartão de Débito', value: 'DEB' },
     { label: 'Cartão Refeição', value: 'REF' }
+    
   ]
 
   constructor(private orderService: OrderService, private router: Router, private formBuilder: FormBuilder) { }
