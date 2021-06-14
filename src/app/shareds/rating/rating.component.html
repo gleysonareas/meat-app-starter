@@ -1,0 +1,4 @@
+<i *ngFor="let r of rates" class="fa" [class.fa-star]="r <= rate" [class.fa-star-o]="r > rate" (click)="setRate(r)"
+  (mouseenter)="setTemporaryRate(r)" (mouseleave)="clearTemporaryRate()"></i>
+<!--Assim é realizada a interação com o conteúdo html do meu template através do *ngFor 
+  onde eu crio uma variavel temporaria pra realizar a interação-->
