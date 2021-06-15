@@ -19,7 +19,7 @@ import { NotificationService } from '../services/notification.service'
 })
 
 export class SharedsModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<any> {
         return {
             ngModule: SharedsModule,
             providers: [ShoppingCartService, OrderService, RestaurantsService, NotificationService], //aqui foram feitas as declarações dos providers. 

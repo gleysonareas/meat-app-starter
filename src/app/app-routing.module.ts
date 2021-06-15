@@ -19,8 +19,8 @@ export const AppRoutingModule: Routes = [
             { path: 'reviews', component: ReviewsComponent },
         ]
     },
-    { path: 'order', loadChildren: '../components/order/order.module#OrderModule' },//a chamada de um feature module deve sempre ser feita aqui no (app.routes). Diferentemente dos shareds modules que são chamados no modulo principal.
+    { path: 'order', loadChildren: './components/order/order.module#OrderModule' },//a chamada de um feature module deve sempre ser feita aqui no (app.routes). Diferentemente dos shareds modules que são chamados no modulo principal.
     { path: 'order-summary', component: OrderSummaryComponent },
-    { path: 'about', loadChildren: '../components/about/about.module#AboutModule' },//aqui eu defino que o componente dessa rota será carregado de um modulo a parte
+    { path: 'about', loadChildren: './components/about/about.module#AboutModule' },//aqui eu defino que o componente dessa rota será carregado de um modulo a parte
     { path: '**', component: NotFoundComponent },
 ]

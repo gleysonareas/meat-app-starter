@@ -4,7 +4,8 @@ class OrderModel{
         public number: number,
         public optionalAddress: string,
         public paymentOption: string,
-        public orderItems: OrderItemModel [] = []
+        public orderItems: OrderItemModel [] = [],
+        public id?: string //? dessa maneira identificamos que uma propriedade é opcional
     ){}
 }
 
