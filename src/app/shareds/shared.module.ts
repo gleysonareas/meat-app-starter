@@ -11,18 +11,44 @@ import { RestaurantsService } from '../services/restaurants.service';
 import { OrderService } from '../services/order.service';
 import { ShoppingCartService } from '../services/shopping-cart.service';
 import { NotificationService } from '../services/notification.service'
+import { LoginService } from "app/services/login.service";
+import { LoggedInGuard } from "app/guards/logged-in.guards";
 
 @NgModule({
-    declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent],
-    imports: [CommonModule, ReactiveFormsModule, FormsModule],
-    exports: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent, CommonModule, ReactiveFormsModule, FormsModule],
+    declarations: [
+        InputComponent,
+        RadioComponent,
+        RatingComponent,
+        SnackbarComponent
+    ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
+    exports: [
+        InputComponent,
+        RadioComponent,
+        RatingComponent,
+        SnackbarComponent,
+        CommonModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
 })
 
 export class SharedsModule {
     static forRoot(): ModuleWithProviders<any> {
         return {
             ngModule: SharedsModule,
-            providers: [ShoppingCartService, OrderService, RestaurantsService, NotificationService], //aqui foram feitas as declarações dos providers. 
+            providers: [
+                ShoppingCartService,
+                OrderService,
+                RestaurantsService,
+                NotificationService,
+                LoginService,
+                LoggedInGuard
+            ], //aqui foram feitas as declarações dos providers. 
         }
     }
 }

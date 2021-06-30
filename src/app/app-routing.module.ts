@@ -1,3 +1,4 @@
+import { LoggedInGuard } from './guards/logged-in.guards';
 import { Routes } from '@angular/router'
 
 import { HomeComponent } from './components/home/home.component'
@@ -7,10 +8,12 @@ import { MenuComponent } from './components/restaurant-detail/menu/menu.componen
 import { ReviewsComponent } from './components/restaurant-detail/reviews/reviews.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 export const AppRoutingModule: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'restaurants', component: RestaurantsComponent },
+    { path: 'login/:to', component: LoginComponent },
+    { path: 'login', component: LoginComponent },
     {
         path: 'restaurants/:id', component: RestaurantDetailComponent,
         children: [
@@ -19,7 +22,8 @@ export const AppRoutingModule: Routes = [
             { path: 'reviews', component: ReviewsComponent },
         ]
     },
-    { path: 'order', loadChildren: './components/order/order.module#OrderModule' },//a chamada de um feature module deve sempre ser feita aqui no (app.routes). Diferentemente dos shareds modules que são chamados no modulo principal.
+    { path: 'restaurants', component: RestaurantsComponent },
+    { path: 'order', loadChildren: './components/order/order.module#OrderModule', canLoad: [LoggedInGuard] },//a chamada de um feature module deve sempre ser feita aqui no (app.routes). Diferentemente dos shareds modules que são chamados no modulo principal.
     { path: 'order-summary', component: OrderSummaryComponent },
     { path: 'about', loadChildren: './components/about/about.module#AboutModule' },//aqui eu defino que o componente dessa rota será carregado de um modulo a parte
     { path: '**', component: NotFoundComponent },

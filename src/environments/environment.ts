@@ -6,5 +6,5 @@
 //Aqui é onde pode ser configurado o build de desenvolvimento.
 export const environment = {
   production: false,
-  api: 'http://localhost:3000'
+  api: 'http://localhost:3001'
 };

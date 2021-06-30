@@ -20,6 +20,7 @@ import { MenuItemComponent } from './components/restaurant-detail/menu-item/menu
 import { ReviewsComponent } from './components/restaurant-detail/reviews/reviews.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
