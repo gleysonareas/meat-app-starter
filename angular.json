@@ -1,126 +1,122 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "newProjectRoot": "projects",
-    "projects": {
-        "meat-app-starter": {
-            "projectType": "application",
-            "schematics": {
-                "@schematics/angular:component": {
-                    "style": "css"
-                },
-                "@schematics/angular:application": {
-                    "strict": true
-                }
-            },
-            "root": "",
-            "sourceRoot": "src",
-            "prefix": "mt",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/meat-app-starter",
-                        "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "tsconfig.app.json",
-                        "inlineStyleLanguage": "css",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
-                        "styles": [
-                            "node_modules/font-awesome/css/font-awesome.min.css",
-                            "node_modules/admin-lte/bootstrap/css/bootstrap.min.css",
-                            "node_modules/admin-lte/dist/css/AdminLTE.min.css",
-                            "node_modules/admin-lte/dist/css/skins/skin-red.min.css",
-                            "node_modules/admin-lte/plugins/iCheck/flat/red.css",
-                            "src/styles.css"
-                        ],
-                        "scripts": [
-                            "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/admin-lte/bootstrap/js/bootstrap.min.js",
-                            "node_modules/admin-lte/dist/js/app.min.js"
-                        ]
-                    },
-                    "configurations": {
-                        "production": {
-                            "budgets": [{
-                                    "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
-                                },
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
-                                }
-                            ],
-                            "fileReplacements": [{
-                                "replace": "src/environments/environment.ts",
-                                "with": "src/environments/environment.prod.ts"
-                            }],
-                            "outputHashing": "all"
-                        },
-                        "development": {
-                            "buildOptimizer": false,
-                            "optimization": false,
-                            "vendorChunk": true,
-                            "extractLicenses": false,
-                            "sourceMap": true,
-                            "namedChunks": true
-                        }
-                    },
-                    "defaultConfiguration": "production"
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "meat-app-starter:build:production"
-                        },
-                        "development": {
-                            "browserTarget": "meat-app-starter:build:development"
-                        }
-                    },
-                    "defaultConfiguration": "development"
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "meat-app-starter:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "src/test.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "tsconfig.spec.json",
-                        "karmaConfig": "karma.conf.js",
-                        "inlineStyleLanguage": "css",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
-                        "styles": [
-                            "node_modules/font-awesome/css/font-awesome.min.css",
-                            "node_modules/admin-lte/bootstrap/css/bootstrap.min.css",
-                            "node_modules/admin-lte/dist/css/AdminLTE.min.css",
-                            "node_modules/admin-lte/dist/css/skins/skin-red.min.css",
-                            "node_modules/admin-lte/plugins/iCheck/flat/red.css",
-                            "src/styles.css"
-                        ],
-                        "scripts": [
-                            "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/admin-lte/bootstrap/js/bootstrap.min.js",
-                            "node_modules/admin-lte/dist/js/app.min.js"
-                        ]
-                    }
-                }
-            }
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "meat-app-starter": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
-    },
-    "defaultProject": "meat-app-starter"
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "mt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/meat-app-starter",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": [
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/admin-lte/bootstrap/css/bootstrap.min.css",
+              "node_modules/admin-lte/dist/css/AdminLTE.min.css",
+              "node_modules/admin-lte/dist/css/skins/skin-red.min.css",
+              "node_modules/admin-lte/plugins/iCheck/flat/red.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/admin-lte/bootstrap/js/bootstrap.min.js",
+              "node_modules/admin-lte/dist/js/app.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "meat-app-starter:build:production"
+            },
+            "development": {
+              "browserTarget": "meat-app-starter:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "meat-app-starter:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": [
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/admin-lte/bootstrap/css/bootstrap.min.css",
+              "node_modules/admin-lte/dist/css/AdminLTE.min.css",
+              "node_modules/admin-lte/dist/css/skins/skin-red.min.css",
+              "node_modules/admin-lte/plugins/iCheck/flat/red.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/admin-lte/bootstrap/js/bootstrap.min.js",
+              "node_modules/admin-lte/dist/js/app.min.js"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "b6822ae3-16f1-418e-babd-2ac35776c78c"
+  }
 }
