@@ -53,7 +53,7 @@ import { RatingComponent } from "./shared/rating/rating.component";
   providers: [
     // toda classe de serviços ela deve ser importada e declarada na 
     // lista de providers do modulo principal.
-    { provide: LocationStrategy, useClass: HashLocationStrategy }, 
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     // Implementando esses serviços, é possivel evitar o erro 404 do 
     // servidor, ja que o angular é carregado no client.
     { provide: LOCALE_ID, useValue: 'pt' },
@@ -63,8 +63,9 @@ import { RatingComponent } from "./shared/rating/rating.component";
 })
 export class AppModule {
   constructor(private injector: Injector) {
-  // const component = createCustomElement(RatingComponent, { injector })
-  // customElements.define('mt-rating', component)
-  // }
-  // ngDoBootstrap() { }
+    // const component = createCustomElement(RatingComponent, { injector })
+    // customElements.define('mt-rating', component)
+    // }
+    // ngDoBootstrap() { }
+  }
 }
